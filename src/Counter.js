@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 function Counter() {
-
   const [counter, setCounter] = useState(0);
   const [hidden, setHidden] = useState(false);
 
-/*
-  //'useEffect' example #1
   useEffect(() => {
-    console.log("effect!");
     document.title = counter;
-  }, [counter]);  //Runs the effect IFF (if and only if) 'counter' changes.
-
-
-  //'useEffect' example #2
-  useEffect(() => {
-    console.log("effect!");
-    document.title = counter;
-  }, []);  //The empty Dependency Array means that the effect runs only once. 
-*/
+  }, [counter]);
 
   return (
     <React.Fragment>
@@ -29,4 +17,4 @@ function Counter() {
   );
 }
 
-export default Counter; 
+export default Counter;
