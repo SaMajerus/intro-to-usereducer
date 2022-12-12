@@ -1,4 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
+
+const initialState = {
+  counter: 0
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {
+        counter: state.counter + 1
+      };
+    default: 
+      throw new Error(`There is no action matching ${action.type}.`);
+  }
+}
 
 function Counter() {
   const [counter, setCounter] = useState(0);
